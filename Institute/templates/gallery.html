@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>gallery page</h1>
+    <style>
+    img{
+        width:250px;
+        height:250px;
+        border:1px gray ridge;
+        padding:20px ;
+        margin-top:10px
+    }
+    </style>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4" >
+            <img src="{% static '/images/img.png' %}">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static '/images/img_1.png' %}">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static '/images/img_2.png' %}">
+        </div></div>
+
+        <div class="row" style="padding:10px ; margin-top:10px">
+
+        <div class="col-md-4">
+            <img src="{% static '/images/img_3.png' %}">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static '/images/img_4.png' %}">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static '/images/img_5.png' %}">
+        </div>
+    </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="offset-md-4 col-md-4">
+    <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" class="form-control" placeholder="username"><br>
+    <input type="password" name="password" class="form-control" placeholder="password"><br>
+        <center>
+    <input type="submit" value="Sign-Up" class="btn btn-primary">
+    <input type="reset" value="clear" class="btn btn-danger"><br><br>
+
+        <h6>create new account  <a href="{% url 'register' %}">register</a></h6></center>
+    </form>
+    </div></div></div>
+{% endblock %}

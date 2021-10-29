@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="offset-md-3 col-md-6">
+    {% if request.user.is_authenticated %}
+        <form method="POST" style="margin-top: 50px">
+            {% csrf_token %}
+            <label>Name :</label>
+            <input type="text" name="name" class="form-control " placeholder="Enter your name">
+
+            <label>Feedback :</label>
+            <textarea name="feedback" class="form-control " placeholder="Enter your feedback"></textarea><br>
+            <center>
+            <input type="submit" value="submit" class="btn btn-primary">
+            <input type="reset" value="clear" class="btn btn-danger"></center>
+        </form><br>
+    {% else %}
+    <h3>Please login to give feedback</h3>
+    {% endif %}
+
+        {% if feedbacks %}
+            {% for i in feedbacks %}
+            <b>Name:</b>{{ i.name }}<br>
+            <b>Date:</b>{{ i.Date }}<br>
+            <b>Feedback:</b>{{ i.feedback }}<br><br>
+            {% endfor %}
+        {% else %}
+        <h3>NO Feedbacks</h3>
+        {% endif %}
+
+    </div>
+</div>
+</div>
+{% endblock %}

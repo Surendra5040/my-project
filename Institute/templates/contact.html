@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="offset-md-3 col-md-6">
+        <form method="POST" style="margin-top: 50px">
+            {% csrf_token %}
+            <label>Name :</label>
+            <input type="text" name="name" class="form-control " placeholder="Enter your name">
+            <label>Email :</label>
+            <input type="email" name="email" class="form-control " placeholder="Enter your email">
+            <label>Query :</label>
+            <textarea name="query" class="form-control " placeholder="Enter your query"></textarea><br>
+            <center>
+            <input type="submit" value="submit" class="btn btn-primary">
+            <input type="reset" value="clear" class="btn btn-danger"></center>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

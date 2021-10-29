@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+    th,td{
+        padding:20px;
+    }
+    </style>
+<h4>Courses Avilable</h4>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+
+    <table class=" table table-bordered text-center" >
+    <thead >
+    <tr>
+        <th>#</th>
+        <th>Course</th>
+        <th>Duration</th>
+        <th>Fee</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>Python</td>
+        <td>60 days</td>
+        <td>2500/-</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Django</td>
+        <td>45 days</td>
+        <td>2500/-</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>REST API</td>
+        <td>30 days</td>
+        <td>1500/-</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>HTML,CSS,JAVASCRIPT</td>
+        <td>60 days</td>
+        <td>3000/-</td>
+    </tr>
+    </tbody>
+    </table>
+        </div>
+
+    </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NTH</title>
+    {% include 'cdn lines.html' %}
+    <style>
+        #r1{
+            margin-top: 150px;
+            background: aliceblue;
+            padding-top: 20px;
+            border-top:1px black solid;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+{% include 'nav.html' %}
+<center><h1 style="background: aliceblue ">NARAYANA TECH HOUSE </h1></center><br>
+    {% block content %}
+
+{% endblock %}
+
+</div></div>
+
+    <div class="row text-center" id="r1">
+        <div class="col-md-6">
+            <h5>NARAYANA TECH HOUSE</h5>
+            <h6>Software training institute</h6>
+        </div>
+        <div class="col-md-6">
+            <h5>CONTACT</h5><br>
+            <h6>Flat No 303, 3rd floor,</h6>
+            <h6>Naga Sai Nivas (Prime hospital line),</h6>
+            <h6>Opposite to Balaji towers,</h6>
+            <h6>DycusRoad, Nellore</h6><br>
+            <h6>surendrakakani5040@gmail.com</h6><br>
+            <h6>+91 7097083076</h6>
+            <h6>+91 9059023137</h6>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
