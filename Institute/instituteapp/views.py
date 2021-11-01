@@ -31,19 +31,21 @@ def services (request):
     return render(request,'services.html')
 
 def feedback(request):
-    if request.method=='GET':
-        feedbacks=Feedback.objects.all()
-        return render(request,'feedback.html',{'feedbacks':feedbacks})
+    if request.user.is_authenticated:
+        if request.method=='GET':
+            feedbacks=Feedback.objects.all()
+            return render(request,'feedback.html',{'feedbacks':feedbacks})
+        else:
+            name=request.POST.get('name')
+            feedback=request.POST.get('feedback')
+
+            Feedback(
+                name=name,feedback=feedback
+            ).save()
+            feedbacks = Feedback.objects.all()
+            return render(request, 'feedback.html',{'feedbacks':feedbacks})
     else:
-        name=request.POST.get('name')
-        feedback=request.POST.get('feedback')
-
-        Feedback(
-            name=name,feedback=feedback
-        ).save()
-        feedbacks = Feedback.objects.all()
-        return render(request, 'feedback.html',{'feedbacks':feedbacks})
-
+        return redirect('login')
 
 def gallery(request):
     return render(request,'gallery.html')
